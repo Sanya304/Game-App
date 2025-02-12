@@ -1,0 +1,52 @@
+:root {
+  --btn-border: 3px solid black;
+  --btn-bg-active: hsl(200, 85%, 45%);
+  --btn-border-active: hsl(200, 85%, 35%);
+  --btn-bg-hover: hsl(200, 85%, 60%);
+  --btn-border-hover: hsl(200, 85%, 50%);
+  --btn-text-color: black;
+  --btn-text-hover: white;
+}
+
+.btn {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--btn-text-color);
+  background: none;
+  border: var(--btn-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn.active {
+  background-color: var(--btn-bg-active);
+  color: var(--btn-text-hover);
+  border-color: var(--btn-border-active);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn.inactive {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus:not(:disabled) {
+  background-color: var(--btn-bg-hover);
+  border-color: var(--btn-border-hover);
+  color: var(--btn-text-hover);
+  transform: scale(1.08);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
